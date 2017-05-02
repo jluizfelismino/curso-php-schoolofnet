@@ -20,4 +20,7 @@ $m->brand = "Honda";
 $m->color = "Blue";
 $m->engine = 150;
 
-echo $ferrari->getEngine();
+Comentários
+echo $ferrari->getEngine(); retorna 488 horsepouwer na tela
+echo $ferrari->color; //Usando parametros da  função construida retorna tela (vazia)
+echo $ferrari->color; //retorna (Red) com $ferrari->color = "Red"; idem $mustang e $m

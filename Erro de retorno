@@ -1,4 +1,0 @@
-Fatal error: Uncaught Error: Call to undefined method mysqli_stmt::bin_param() in 
-C:\www\2_php_mysql_with\crud_mysqli\ServiceUser.php:45
-Stack trace: #0 C:\www\2_php_mysql_with\crud_mysqli\index.php(28): ServiceUser->insert() #1 {main} thrown in 
-C:\www\2_php_mysql_with\crud_mysqli\ServiceUser.php on line 45

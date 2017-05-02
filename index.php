@@ -1,51 +1,23 @@
 <?php
 
-require_once("User.php");
-require_once("ServiceUser.php");
+require_once("Car.php");
+require_once("Motorcycle.php");
 
-$server = "localhost";
-$user 	= "root";
-$pass	= "";
-$database = "teste";
+$ferrari = new Car("Ferrari","Red");
+//$ferrari->brand = "Ferrari";
+//$ferrari->color = "Red";
+$ferrari->engine = 488;
+$ferrari->doors = 2;
 
-// Conect Mysql
-@$mysqli = new mysqli($server,$user,$pass,$database);
-// o @ tem a finalidade de esconder o erro do usuário
-//error
+$mustang = new Car("Mustang","Yellow");
+//$mustang->brand = "Mustang";
+//$mustang->color = "Yellow";
+$mustang->engine = 300;
+$mustang->doors = 4;
 
-if(mysqli_connect_errno()){
-	echo "Failed to connect to MYSQL:(".$mysqli->connect_errno.")".$mysqli->connect_error;
-	exit;
-}
+$m = new Motorcycle;
+$m->brand = "Honda";
+$m->color = "Blue";
+$m->engine = 150;
 
-$user = new User();
-
-$user->setName("Raphael TF")
-	->setEmail("raphaelf@email.com");
-
-$serviceUser = new ServiceUser($mysqli,$user);
-
-echo $serviceUser->insert();
-//echo "Ret:".$serviceUser->update()."<br/>";
-//echo "Ret:".$serviceUser->delete(4)."<br/>";
-
-
-$ret = $serviceUser->find(2);
-/*echo $ret['id']."<br/>";
-echo $ret['name']."<br/>";
-echo $ret['email']."<br/><hr>";
-*/
-
-//$ret = $user->list("id desc");
-/*foreach ($ret as $value) {
-	echo $value['id']."<br/>";
-	echo $value['name']."<br/>";
-	echo $value['email']."<br/><hr>";
-}*/	
-
-?>
-
-
-
-
-
+echo $ferrari->getEngine();
